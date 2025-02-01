@@ -2,6 +2,7 @@ import "./Main.css"
 import Usercarousel from "../components/Usercarousel";
 import Cta from "../components/Cta";
 import Footer from "../components/Footer";
+import Form from "../components/Form";
 
 const Main= () => {
 return(
@@ -82,6 +83,9 @@ return(
 
 <section>
 <Footer/>
+</section>
+<section>
+  <Form/>
 </section>
 </div>
 

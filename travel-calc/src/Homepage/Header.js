@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Header.css"; // Import the CSS file
-import logo from "../logo.png"
-import {FaSearch} from "react-icons/fa"
+import logo from "../logo.png";
+
+import {FaSearch} from "react-icons/fa";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
