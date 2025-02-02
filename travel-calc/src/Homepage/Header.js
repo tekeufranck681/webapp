@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css"; // Import the CSS file
 import logo from "../logo.png";
+import { NavLink,Link } from "react-router-dom";
 
 import {FaSearch} from "react-icons/fa";
 
@@ -26,17 +27,17 @@ const Header = () => {
         {/* Navbar Links */}
         <nav className={`nav-links ${mobileMenuOpen ? "active" : ""}`}>
           <ul>
-            <li>Home</li>
-            <li>Features</li>
-            <li>Pricing</li>
-            <li>About</li>
-            <li>Contact</li>
+          <li><NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>Home</NavLink></li>
+          <li><NavLink to="/expenses" className={({ isActive }) => (isActive ? "active" : "")}>Expenses</NavLink></li>
+            <li><NavLink to="/plan-trip" className={({ isActive }) => (isActive ? "active" : "")}>Plan Trip</NavLink></li>
+            <li><NavLink to="/budget" className={({ isActive }) => (isActive ? "active" : "")}>Budget</NavLink></li>
+            <li><NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "")}>Contact</NavLink></li>
           </ul>
 
           {/* Buttons */}
           <div className="nav-buttons">
-            <button className="sign-in">Sign In</button>
-            <button className="learn-more">Learn More</button>
+          <Link to="/signin"><button className="sign-in">Sign In</button></Link>
+           <button className="learn-more">Learn More</button>
           </div>
         </nav>
 

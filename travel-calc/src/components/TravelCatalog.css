@@ -1,0 +1,125 @@
+/* Background Styling */
+.travel-container {
+    background: url("https://source.unsplash.com/1600x900/?travel,adventure") no-repeat center center/cover;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    min-height: 100vh;
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #218838;
+  }
+  
+  /* Filter Section */
+  .filter-section {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .filter-section input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  }
+  
+  /* Catalog Grid */
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  /* Travel Card */
+  .travel-card {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 320px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .travel-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .travel-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .travel-details {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .view-btn, .budget-btn {
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .view-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .view-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .budget-btn {
+    background-color: #ff9800;
+    color: white;
+  }
+  
+  .budget-btn:hover {
+    background-color: #e68900;
+  }
+  
+  /* Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .close-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    float: right;
+  }
+  

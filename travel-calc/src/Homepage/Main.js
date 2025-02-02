@@ -2,7 +2,7 @@ import "./Main.css"
 import Usercarousel from "../components/Usercarousel";
 import Cta from "../components/Cta";
 import Footer from "../components/Footer";
-import Form from "../components/Form";
+
 
 const Main= () => {
 return(
@@ -20,7 +20,7 @@ return(
 </div>
 </section>
   <section>
-<div className="features-section">
+<div id="features" className="features-section">
   <h2>Our Features</h2>
   <p>
     Discover how Travel-Calc can simplify your trip planning. From tracking expenses to creating shareable plans, we’ve got everything covered.
@@ -80,13 +80,10 @@ return(
 <section>
 <Cta/>
 </section>
+<section>
+<Footer />
+</section>
 
-<section>
-<Footer/>
-</section>
-<section>
-  <Form/>
-</section>
 </div>
 
 

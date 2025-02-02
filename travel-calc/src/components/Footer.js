@@ -12,7 +12,7 @@ const Footer = () => {
         textAlign: "center",
       }}
     >
-      <div className="footer-content" style={{ maxWidth: "1200px", margin: "auto" }}>
+      <div id="contact" className="footer-content" style={{ maxWidth: "1200px", margin: "auto" }}>
         {/* Footer Links */}
         <div
           className="footer-links"
@@ -28,9 +28,9 @@ const Footer = () => {
             <h4 style={{ marginBottom: "10px", fontSize: "1.2rem" }}>Quick Links</h4>
             <ul style={{ listStyleType: "none", padding: 0, lineHeight: "2" }}>
               <li><a href="/" style={{ color: "#000", textDecoration: "none" }}>Home</a></li>
-              <li><a href="/features" style={{ color: "#000", textDecoration: "none" }}>Features</a></li>
-              <li><a href="/pricing" style={{ color: "#000", textDecoration: "none" }}>Pricing</a></li>
-              <li><a href="/contact" style={{ color: "#000", textDecoration: "none" }}>Contact</a></li>
+              <li><a href="/features" style={{ color: "#000", textDecoration: "none" }}>Expenses</a></li>
+              <li><a href="/plan-trip" style={{ color: "#000", textDecoration: "none" }}>Plan Trip</a></li>
+              <li><a href="/contact" style={{ color: "#000", textDecoration: "none" }}>Bugdet</a></li>
             </ul>
           </div>
           <div>
