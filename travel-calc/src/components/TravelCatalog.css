@@ -1,125 +1,188 @@
-/* Background Styling */
+/* TravelCatalog.css */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Travel Container */
 .travel-container {
-    background: url("https://source.unsplash.com/1600x900/?travel,adventure") no-repeat center center/cover;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    min-height: 100vh;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Title */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #008000; /* Green */
+  margin-bottom: 2rem;
+  animation: fadeIn 2s ease-out;
+}
+
+/* Filter Section */
+.filter-section {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filter-section label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-section input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #008000;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.filter-section input:focus {
+  border-color: #000;
+}
+
+/* Catalog Grid */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Travel Card */
+.travel-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.travel-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.travel-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #008000;
+}
+
+/* Travel Details */
+.travel-details {
+  padding: 1rem;
+}
+
+.destination {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #008000;
+  margin-bottom: 1rem;
+}
+
+.duration, .price, .rating {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.view-btn, .budget-btn {
+  padding: 0.5rem 1.0rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-btn {
+  background-color: #008000;
+  color: white;
+}
+
+.view-btn:hover {
+  background-color: #006400;
+}
+
+.budget-btn {
+  background-color: #000;
+  color: white;
+}
+
+.budget-btn:hover {
+  background-color: #333;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+  animation: slideIn 0.5s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  .title {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    color: #218838;
+  100% {
+    opacity: 1;
   }
-  
-  /* Filter Section */
-  .filter-section {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-20px);
   }
-  
-  .filter-section input {
-    padding: 8px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
+  100% {
+    transform: translateY(0);
   }
-  
-  /* Catalog Grid */
-  .catalog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    justify-items: center;
-  }
-  
-  /* Travel Card */
-  .travel-card {
-    background: white;
-    color: black;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 320px;
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-  
-  .travel-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .travel-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .travel-details {
-    padding: 15px;
-    text-align: left;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .view-btn, .budget-btn {
-    border: none;
-    padding: 10px 15px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-  }
-  
-  .view-btn {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .view-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  .budget-btn {
-    background-color: #ff9800;
-    color: white;
-  }
-  
-  .budget-btn:hover {
-    background-color: #e68900;
-  }
-  
-  /* Modal */
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background: white;
-    color: black;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .close-btn {
-    font-size: 1.5rem;
-    cursor: pointer;
-    float: right;
-  }
+}
+
   

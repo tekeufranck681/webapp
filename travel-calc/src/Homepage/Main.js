@@ -10,7 +10,7 @@ return(
     <section className="hero">
 <div className="hero-content">
   <h1>Plan Your Dream Trip Effortlessly!</h1>
-  <p>
+  <p className="id">
     Track expenses, convert currencies, and create shareable travel budgets with ease.
   </p>
   <div className="hero-buttons">

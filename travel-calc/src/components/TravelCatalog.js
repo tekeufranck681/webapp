@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import "./TravelCatalog.css";
+import paris from "../Homepage/img/paris.jpg"
+import newyork from "../Homepage/img/newyork.jpg"
+import tokyo from "../Homepage/img/tokyo.jpg"
+import capetown from "../Homepage/img/capetown.jpg"
+import bali from "../Homepage/img/bali.jpg"
 
 const travelData = [
   {
@@ -10,7 +15,7 @@ const travelData = [
     price: 2500,
     rating: 4.8,
     description: "Explore the romance of Paris with guided tours, iconic landmarks, and authentic cuisine.",
-    image: "https://source.unsplash.com/400x250/?paris,eiffel-tower",
+    image: paris,
   },
   {
     id: 2,
@@ -20,7 +25,7 @@ const travelData = [
     price: 3200,
     rating: 4.7,
     description: "Discover the beauty of Japan with a mix of modern skyscrapers, historic temples, and delicious sushi.",
-    image: "https://source.unsplash.com/400x250/?tokyo,japan",
+    image: tokyo,
   },
   {
     id: 3,
@@ -30,7 +35,7 @@ const travelData = [
     price: 1800,
     rating: 4.6,
     description: "Experience the magic of NYC, from Times Square to Central Park, in a once-in-a-lifetime journey.",
-    image: "https://source.unsplash.com/400x250/?new-york,city",
+    image: newyork,
   },
   {
     id: 4,
@@ -40,7 +45,7 @@ const travelData = [
     price: 2200,
     rating: 4.9,
     description: "Explore nature's beauty with a safari tour and breathtaking landscapes of Cape Town.",
-    image: "https://source.unsplash.com/400x250/?cape-town,south-africa",
+    image: capetown,
   },
   {
     id: 5,
@@ -50,8 +55,59 @@ const travelData = [
     price: 2000,
     rating: 4.5,
     description: "Relax on the white sandy beaches of Bali, surrounded by tropical paradise and amazing nightlife.",
-    image: "https://source.unsplash.com/400x250/?bali,beach",
+    image: bali,
   },
+  {
+    id: 1,
+    destination: "Paris, France",
+    duration: 7,
+    agency: "Wanderlust Travels",
+    price: 2500,
+    rating: 4.8,
+    description: "Explore the romance of Paris with guided tours, iconic landmarks, and authentic cuisine.",
+    image: paris,
+  },
+  {
+    id: 2,
+    destination: "Tokyo, Japan",
+    duration: 10,
+    agency: "Explore Japan Tours",
+    price: 3200,
+    rating: 4.7,
+    description: "Discover the beauty of Japan with a mix of modern skyscrapers, historic temples, and delicious sushi.",
+    image: tokyo,
+  },
+  {
+    id: 3,
+    destination: "New York City, USA",
+    duration: 5,
+    agency: "Dream Destinations",
+    price: 1800,
+    rating: 4.6,
+    description: "Experience the magic of NYC, from Times Square to Central Park, in a once-in-a-lifetime journey.",
+    image: newyork,
+  },
+  {
+    id: 4,
+    destination: "Cape Town, South Africa",
+    duration: 8,
+    agency: "Safari Adventure",
+    price: 2200,
+    rating: 4.9,
+    description: "Explore nature's beauty with a safari tour and breathtaking landscapes of Cape Town.",
+    image: capetown,
+  },
+  {
+    id: 5,
+    destination: "Bali, Indonesia",
+    duration: 6,
+    agency: "Tropical Getaways",
+    price: 2000,
+    rating: 4.5,
+    description: "Relax on the white sandy beaches of Bali, surrounded by tropical paradise and amazing nightlife.",
+    image: bali,
+  },
+  
 ];
 
 const TravelCatalog = () => {

@@ -1,0 +1,131 @@
+.learn-more-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 120px; /* Increased padding to prevent overlap with header */
+    background: linear-gradient(135deg, #ffffff, #28a745); /* Gradient to match webpage colors */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.learn-more-container {
+    max-width: 1000px;
+    padding: 40px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(40, 167, 69, 0.5);
+    text-align: center;
+    z-index: 1;
+}
+
+/* Headings */
+h1, h2 {
+    color: #28a745;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 36px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+/* Section Styling */
+section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 10px 0;
+    font-size: 18px;
+    list-style: none;
+}
+
+ul li::before {
+   
+    
+    color: #28a745;
+}
+
+/* Buttons */
+.get-started {
+    text-align: center;
+    background: #28a745;
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.get-started:hover {
+    transform: scale(1.05);
+    background-color: #1e7e34;
+}
+
+.signup-btn {
+    background: white;
+    color: #28a745;
+    padding: 14px 30px;
+    border: 2px solid #28a745;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    margin-top: 20px;
+}
+
+.signup-btn:hover {
+    background: #28a745;
+    color: white;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+    .learn-more-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .get-started {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .signup-btn {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+}
+
+
