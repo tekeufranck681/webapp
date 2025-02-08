@@ -1,63 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './BudgetSummary.css';
 
-// Example of API placeholders for currency conversion and fetching budget data
-const API_BASE = "https://api.example.com"; // Replace with your real API endpoint
-
 const BudgetSummary = ({ budget, categories, totalDuration }) => {
-  const [currencyData, setCurrencyData] = useState({
-    selectedCurrency: 'USD',
-    localCurrency: 'USD',
-    currencies: [],
-    conversionRates: {},
-  });
-  const [loading, setLoading] = useState(true);
+  // Simulated currency data (no API call)
+  const [currency, setCurrency] = useState('USD');
+  const conversionRates = { USD: 1, EUR: 0.92, GBP: 0.78, XAF: 600 };
 
-  // Fetch currency conversion rates and data
-  useEffect(() => {
-    async function fetchCurrencyData() {
-      setLoading(true);
-      try {
-        const res = await fetch(`${API_BASE}/currency-rates`);
-        const data = await res.json();
-        setCurrencyData({
-          selectedCurrency: 'USD',  // Default, can be dynamically selected
-          localCurrency: 'USD',     // Can change depending on the destination
-          currencies: data.currencies,
-          conversionRates: data.rates, // Assume the API returns conversion rates
-        });
-      } catch (error) {
-        console.error('Error fetching currency data:', error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchCurrencyData();
-  }, []);
+  // Convert amount based on selected currency
+  const getConvertedAmount = (amount) => (amount * conversionRates[currency]).toFixed(2);
 
-  // Calculate converted total in the selected currency
-  const getConvertedAmount = (amount) => {
-    return amount * currencyData.conversionRates[currencyData.selectedCurrency] || amount;
-  };
+  // Handle button clicks
+  const handleExport = () => alert('Export feature coming soon!');
+  const handleShare = () => alert('Sharing feature coming soon!');
 
   return (
     <div className="budget-summary">
       <h1>Travel Budget Summary</h1>
 
-      {/* Loading Indicator */}
-      {loading && <div className="loading">Loading...</div>}
-
       {/* Total Budget Overview */}
       <section className="overview">
         <h2>Total Budget</h2>
         <p>
-          <strong>{currencyData.selectedCurrency} {getConvertedAmount(budget.total).toFixed(2)}</strong> 
-          <span>(Converted: {currencyData.localCurrency} {budget.total.toFixed(2)})</span>
+          <strong>{currency} {getConvertedAmount(budget.total)}</strong> 
+          <span> (Original: USD {budget.total.toFixed(2)})</span>
         </p>
-        <div className="progress-bar">
-          <span>{Math.round((budget.spent / budget.total) * 100)}% spent</span>
+        <div className="progress-container">
           <div className="progress" style={{ width: `${(budget.spent / budget.total) * 100}%` }}></div>
         </div>
+        <p>{Math.round((budget.spent / budget.total) * 100)}% spent</p>
       </section>
 
       {/* Categories Breakdown */}
@@ -66,48 +36,37 @@ const BudgetSummary = ({ budget, categories, totalDuration }) => {
         {categories.map((category) => (
           <div className="category" key={category.name}>
             <h3>{category.name}</h3>
-            <p>Estimated Cost: {currencyData.selectedCurrency} {getConvertedAmount(category.estimated).toFixed(2)}</p>
+            <p>Estimated Cost: {currency} {getConvertedAmount(category.estimated)}</p>
             <p>Percentage of Total: {Math.round((category.estimated / budget.total) * 100)}%</p>
           </div>
         ))}
       </section>
 
-      {/* Currency Conversion */}
-      <section className="currency-conversion">
-        <h2>Currency Conversion</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Currency</th>
-              <th>Converted Amount</th>
-              <th>Rate</th>
-            </tr>
-          </thead>
-          <tbody>
-            {currencyData.currencies.map((currency) => (
-              <tr key={currency.code}>
-                <td>{currency.name}</td>
-                <td>{currency.code} {getConvertedAmount(budget.total).toFixed(2)}</td>
-                <td>{currencyData.conversionRates[currency.code] || 'N/A'}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      {/* Currency Selection */}
+      <section className="currency-selection">
+        <h2>Select Currency</h2>
+        <select onChange={(e) => setCurrency(e.target.value)} value={currency}>
+          <option value="USD">USD - US Dollar</option>
+          <option value="EUR">EUR - Euro</option>
+          <option value="GBP">GBP - British Pound</option>
+          <option value="XAF">XAF - CFA Franc</option>
+        </select>
       </section>
 
       {/* Daily Budget */}
       <section className="daily-budget">
         <h2>Daily Budget</h2>
-        <p>Estimated Daily Budget: {currencyData.selectedCurrency} {(budget.total / totalDuration).toFixed(2)}</p>
+        <p>Estimated Daily Budget: {currency} {(budget.total / totalDuration).toFixed(2)}</p>
       </section>
 
       {/* Save and Share Options */}
       <section className="export-options">
-        <button onClick={() => console.log('Export PDF/Excel feature coming soon!')}>Export Budget</button>
-        <button onClick={() => console.log('Sharing feature coming soon!')}>Share Plan</button>
+        <button onClick={handleExport}>Export Budget</button>
+        <button onClick={handleShare}>Share Plan</button>
       </section>
     </div>
   );
 };
 
 export default BudgetSummary;
+

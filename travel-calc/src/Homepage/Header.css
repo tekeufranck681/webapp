@@ -106,7 +106,7 @@
   .nav-buttons {
     display: flex;
     gap: 10px;
-    margin-right: -40px;
+    margin-right: -90px;
   }
   
    .sign-in {
@@ -132,7 +132,8 @@
   .learn-more {
     background-color: #28a745;
     color: white;
-    padding: 12px 20px;
+    padding: 12px 15px;
+    padding-right: 10px;
     border: none;
     border-radius: 70px;
     cursor: pointer;

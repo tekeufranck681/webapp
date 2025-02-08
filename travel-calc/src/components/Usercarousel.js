@@ -1,5 +1,10 @@
 import React from "react";
 import Slider from "react-slick";
+import user1 from "../Homepage/img/user1.jpeg"
+import user2 from "../Homepage/img/user2.jpeg"
+import user3 from "../Homepage/img/user3.jpeg"
+import user4 from "../Homepage/img/user4.jpeg"
+import user5 from "../Homepage/img/user5.png"
 
 const Usercarousel = () => {
   const settings = {
@@ -29,35 +34,35 @@ const Usercarousel = () => {
   const testimonials = [
     {
       name: "John Doe",
-      image: "https://via.placeholder.com/80",
+      image: user1,
       rating: "★★★★★",
       comment:
         "Travel-Calc made my vacation planning so easy! I stayed within budget and even had some money left for souvenirs.",
     },
     {
       name: "Jane Smith",
-      image: "https://via.placeholder.com/80",
+      image: user2,
       rating: "★★★★☆",
       comment:
         "I love the currency conversion feature. It’s super handy when traveling abroad.",
     },
     {
       name: "Alex Brown",
-      image: "https://via.placeholder.com/80",
+      image: user3,
       rating: "★★★★★",
       comment:
         "The expense categorization tool is a game-changer. Highly recommended!",
     },
     {
       name: "Emily Davis",
-      image: "https://via.placeholder.com/80",
+      image: user4,
       rating: "★★★★★",
       comment:
         "Travel-Calc's shareable plans helped me coordinate my trip with friends seamlessly.",
     },
     {
       name: "Michael Johnson",
-      image: "https://via.placeholder.com/80",
+      image: user5,
       rating: "★★★★☆",
       comment:
         "Budget summaries are incredibly clear and easy to follow. My family trip was a success, thanks to Travel-Calc!",
